@@ -51,6 +51,7 @@ public class Controller implements Initializable {
         nameField.setText(null);
         surField.setText(null);
 
+
     }
 
     @FXML
@@ -58,7 +59,10 @@ public class Controller implements Initializable {
         insertPlayer newPlayer = new insertPlayer();
 
         newPlayer.insert(nameField.getText(), surField.getText());
-
+        tableview.getItems().clear();
+        loadData();
+        nameField.setText(null);
+        surField.setText(null);
 
     }
 
