@@ -4,13 +4,19 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.*;
 import java.util.ResourceBundle;
@@ -44,7 +50,24 @@ public class Controller implements Initializable {
     TableColumn<?, ?> win;
     @FXML
     TableColumn<?, ?> loss;
+    @FXML
+    Button startButton;
 
+    @FXML
+    void onClickStart(ActionEvent ActionEvent){
+        try {
+            FXMLLoader fxmlLoader = new  FXMLLoader(getClass().getResource("turnament.fxml"));
+            Parent root1 = fxmlLoader.load();
+            Stage stage = new Stage();
+            stage.setTitle("Turnament");
+            stage.setScene(new Scene(root1));
+            stage.show();
+
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
     @FXML
     void onClickClear(ActionEvent ActionEvent){
