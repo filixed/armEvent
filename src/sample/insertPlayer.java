@@ -33,4 +33,20 @@ public class insertPlayer {
             System.out.println(e.getMessage());
         }
     }
+
+    public void updateWin(int id){
+        String sql = "UPDATE zawodnicy SET win = " + 1 +" "+
+                "where ID = "+id ;
+        try (Connection conn = this.connect();
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            // set the corresponding param
+
+
+            // update
+            pstmt.executeUpdate();
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }

@@ -6,9 +6,7 @@ import java.sql.SQLException;
 
 
 public class Connect {
-    /**
-     * Connect to a sample database
-     */
+
     public static void connect() {
         Connection conn = null;
         try {
